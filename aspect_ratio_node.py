@@ -59,7 +59,7 @@ class SimpleAspectRatio:
             "16:9 - 1024x576",
             "16:9 - 1344x768",
         ]
-        ORIENTATION = ["portrait", "landscape"]
+        ORIENTATION = ["landscape", "portrait"]
 
         return {
             "required": {
@@ -85,7 +85,7 @@ class SimpleAspectRatio:
 
     def get_size(self, aspectRatio, orientation):
         [width, height] = aspectRatio.split(" - ")[1].split("x")
-        if orientation == "landscape":
+        if orientation == "portrait":
             width, height = height, width
         return (int(width), int(height))
 
